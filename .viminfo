@@ -1,0 +1,1234 @@
+# Ce fichier viminfo a été généré par Vim 7.4.
+# Vous pouvez l'éditer, mais soyez prudent.
+
+# 'encoding' dans lequel ce fichier a été écrit
+*encoding=utf-8
+
+
+# hlsearch on (H) or off (h):
+~h
+# Dernier motif de recherche  :
+~MSle0~/scp_get
+
+# Dernier motif de recherche Substitue  :
+~MSle0&$self->{repLogsLocal}/$self->{sousRepLocal}
+
+# Dernières chaînes de substitution :
+$
+
+# Historique ligne de commande (chronologie décroissante) :
+:q
+:w
+:e .
+:e TCF.properties
+:e test_getLog.pl
+:'<,'>norm I#
+:e test_orDefined.pl
+:e test_connect.pl
+:e Singleton.pm
+:'<,'>s#$self->{repLogsLocal}/$self->{sousRepLocal}#$localRep#
+:'<,'>s/$self->{repLogsLocal}/$self->{sousRepLocal}/$localRep/
+:sp GetLogFilesOverSSH.pm
+:;w
+:!bash
+:e tags
+:!ctags .
+:!ctags 
+:wq
+:sp test_singleton.pl
+:<
+:'<,'>nor I#
+:'<,'>s/#//
+:q!
+:q!:
+:%s#/platform
+:wq!
+:qwq!
+:'<,'>normal x
+:'<,'>nor x
+:set
+:set fileencoding=utf-8
+:set encoding=utf-8
+:w japonais
+:%s/¿/ /g
+:%s/History: The Agile Manifesto
+:1,$d
+:s
+:w!
+:e grep.pl
+:'<,'>norm x
+:e
+:2
+:e capture_vg.pl
+:w capture_vg.pl
+:e Filtre_Groupe.pm
+:e Filtre_Ligne.pm
+:e Filtre_Inc.pm
+:! ctags -R
+:w Filtre_Groupe.pm
+:split grep.pl
+
+# Historique chaîne de recherche (chronologie décroissante) :
+?/scp_get
+? @$
+? \<GetLogFilesOverSSH\>
+? \<ssh\>
+? \<projets\>
+? \<_projets\>
+? \<map\>
+?/fichier de log
+?/essai2
+?/ecr
+? $self->{repLogsLocal}/$self->{sousRepLocal}
+?/prep
+?/pre
+? \<optcfws1\>
+? \<ls\>
+? \<_compteur\>
+? \<inc_compteur\>
+? \<Singleton\>
+? #
+?/file
+? \<EOF\>
+?/doc
+?/here
+?/Franc
+?/q
+?/mysql
+?/val
+?/title
+?/encodeTiddlerTitle
+?/enco
+?/decode
+?/var sel
+?/encode
+?/encore
+?/uri
+?/usri
+?/return
+?/git
+?/Getting
+?/toggle
+? /platform
+?/temp
+?/statu
+? \<ipv6\>
+?/qui
+?/mailg
+?/mail
+?/@
+?/v3
+?/v2
+
+# Historique expression (chronologie décroissante) :
+
+# Historique ligne de saisie (chronologie décroissante) :
+@/media/devel/sources/projets/training/ssh/Singleton.pm
+@/media/devel/sources/projets/ebooks/scriba/infos_livre.rb
+@/media/devel/sources/projets/ebooks/scriba/info_livre.rb
+
+# Historique ligne de saisie (chronologie décroissante) :
+
+# Registres :
+""0	CHAR	0
+	/
+"1	LINE	0
+	    map { $_"$self->{repLogsDistant}/
+"2	LINE	0
+	
+"3	LINE	0
+	
+"4	LINE	0
+	
+"5	LINE	0
+	
+"6	LINE	0
+	    foreach my $fic (@ls) 
+"7	LINE	0
+	
+"8	LINE	0
+	
+"9	LINE	0
+	    
+"a	CHAR	0
+	data = open('
+"-	CHAR	0
+	/
+
+# Marques dans le fichier :
+'0  1  0  ~/.inputrc
+'1  9  0  /media/devel/sources/projets/training/ssh/tcf/GetLogFilesOverSSH.pl
+'2  238  2  /media/devel/sources/projets/training/ssh/GetLogFilesOverSSH.pm
+'3  4  0  /media/devel/sources/projets/training/ssh/tags
+'4  5  18  /media/devel/sources/projets/training/ssh/test_getLog.pl
+'5  81  10  /media/devel/sources/projets/training/ssh/GetLogFilesOverSSH.pm
+'6  8  40  /media/devel/sources/projets/training/ssh/test_connect.pl
+'7  12  27  /media/devel/sources/projets/training/ssh/test_connect.pl
+'8  4  0  /media/devel/sources/projets/training/ssh/test_singleton.pl
+'9  1  0  /media/devel/sources/projets/training/ssh/singleton.pm
+
+# Liste de sauts (le plus récent en premier) :
+-'  1  0  ~/.inputrc
+-'  9  0  /media/devel/sources/projets/training/ssh/tcf/GetLogFilesOverSSH.pl
+-'  154  78  /media/devel/sources/projets/training/ssh/tcf/GetLogFilesOverSSH.pl
+-'  1  0  /media/devel/sources/projets/training/ssh/tcf/GetLogFilesOverSSH.pl
+-'  16  0  /media/devel/sources/projets/training/ssh
+-'  28  1  /media/devel/sources/projets/training/ssh
+-'  23  0  /media/devel/sources/projets/training/ssh
+-'  1  0  /media/devel/sources/projets/training/ssh
+-'  10  36  /media/devel/sources/projets/training/ssh/TCF.properties
+-'  6  0  /media/devel/sources/projets/training/ssh/TCF.properties
+-'  1  18  /media/devel/sources/projets/training/ssh/test_getLog.pl
+-'  4  0  /media/devel/sources/projets/training/ssh/test_getLog.pl
+-'  7  7  /media/devel/sources/projets/training/ssh/test_orDefined.pl
+-'  6  0  /media/devel/sources/projets/training/ssh/test_orDefined.pl
+-'  1  12  /media/devel/sources/projets/training/ssh/test_connect.pl
+-'  6  19  /media/devel/sources/projets/training/ssh/test_getLog.pl
+-'  10  0  /media/devel/sources/projets/training/ssh/test_connect.pl
+-'  1  0  /media/devel/sources/projets/training/ssh/TCF.properties
+-'  2  0  /media/devel/sources/projets/training/ssh/test_list.pl
+-'  1  0  /media/devel/sources/projets/training/ssh/test_list.pl
+-'  2  0  /media/devel/sources/projets/training/ssh/test_getLog.pl
+-'  32  17  /media/devel/sources/projets/training/ssh/Singleton.pm
+-'  38  78  /media/devel/sources/projets/training/ssh/Singleton.pm
+-'  39  4  /media/devel/sources/projets/training/ssh/Singleton.pm
+-'  14  0  /media/devel/sources/projets/training/ssh/Singleton.pm
+-'  10  0  /media/devel/sources/projets/training/ssh/test_list.pl
+-'  238  2  /media/devel/sources/projets/training/ssh/GetLogFilesOverSSH.pm
+-'  189  23  /media/devel/sources/projets/training/ssh/GetLogFilesOverSSH.pm
+-'  169  0  /media/devel/sources/projets/training/ssh/GetLogFilesOverSSH.pm
+-'  3  13  /media/devel/sources/projets/training/ssh/test_getLog.pl
+-'  4  0  /media/devel/sources/projets/training/ssh/tags
+-'  5  12  /media/devel/sources/projets/training/ssh/test_getLog.pl
+-'  81  10  /media/devel/sources/projets/training/ssh/GetLogFilesOverSSH.pm
+-'  1  0  /media/devel/sources/projets/training/ssh/GetLogFilesOverSSH.pm
+-'  8  40  /media/devel/sources/projets/training/ssh/test_connect.pl
+-'  17  36  /media/devel/sources/projets/training/ssh/test_connect.pl
+-'  9  12  /media/devel/sources/projets/training/ssh/test_connect.pl
+-'  12  27  /media/devel/sources/projets/training/ssh/test_connect.pl
+-'  4  0  /media/devel/sources/projets/training/ssh/test_singleton.pl
+-'  1  0  /media/devel/sources/projets/training/ssh/Singleton.pm
+-'  1  0  /media/devel/sources/projets/training/ssh/singleton.pm
+-'  10  0  /media/devel/sources/projets/training/ssh/test_singleton.pl
+-'  2  13  /media/devel/sources/projets/training/ssh/test_singleton.pl
+-'  11  0  /media/devel/sources/projets/training/ssh/test_singleton.pl
+-'  21  59  /media/devel/sources/projets/training/ssh/singleton.pm
+-'  14  0  /media/devel/sources/projets/training/ssh/test_connect.pl
+-'  18  0  ~/.bashrc
+-'  1  0  ~/.bashrc
+-'  1  0  ~/.bash
+-'  2  0  /media/devel/sources/projets/training/ssh/test_connect.pl
+-'  6  3  /media/devel/sources/projets/training/ssh/test_connect.pl
+-'  9  26  ~/ownCloud/Documents/utc/supports_cours/achats/livres/algorithmique
+-'  1  0  ~/ownCloud/Documents/utc/supports_cours/achats/livres/algorithmique
+-'  2  0  ~/.mpdconf
+-'  1  0  ~/.mpdconf
+-'  12  40  ~/Documents/a conserver/transac_poussette.txt
+-'  1  0  ~/Documents/a conserver/transac_poussette.txt
+-'  3  0  ~/ownCloud/Documents/infos/pediatre
+-'  1  0  ~/ownCloud/Documents/infos/pediatre
+-'  1  13  ~/pediatre
+-'  11  21  ~/.htaccess
+-'  12  26  ~/.htaccess
+-'  1  0  ~/.htaccess
+-'  7  0  ~/.bashrc
+-'  12  0  ~/.bashrc
+-'  9  0  /usr/lib/systemd/system/transmission.service
+-'  1  0  /usr/lib/systemd/system/transmission.service
+-'  33  0  /media/devel/sources/pkg/hplip/PKGBUILD
+-'  53  8  /media/devel/sources/pkg/hplip/PKGBUILD
+-'  59  2  /media/devel/sources/pkg/hplip/PKGBUILD
+-'  1  0  /media/devel/sources/pkg/hplip/PKGBUILD
+-'  60  0  /media/devel/sources/pkg/hplip/PKGBUILD
+-'  61  45  /media/devel/sources/pkg/hplip/PKGBUILD
+-'  13  0  /media/devel/sources/pkg/hplip/PKGBUILD
+-'  1  1  /etc/pacman.d/mirrorlist
+-'  1  0  ~/wsu.pdf
+-'  1  0  ~/wsu.
+-'  7  0  ~/labs/echange_vm/vagrant/discourse/discourse/Vagrantfile
+-'  1  0  ~/labs/echange_vm/vagrant/discourse/discourse/Vagrantfile
+-'  36  0  ~/labs/echange_vm/vagrant/discourse/discourse/Vagrantfile
+-'  258  0  ~/inside/OvhApi-perl-1.1/OvhApi.pm
+-'  353  0  ~/inside/OvhApi-perl-1.1/OvhApi.pm
+-'  358  0  ~/inside/OvhApi-perl-1.1/OvhApi.pm
+-'  43  0  ~/inside/OvhApi-perl-1.1/OvhApi.pm
+-'  1  0  ~/inside/OvhApi-perl-1.1/OvhApi.pm
+-'  16  0  ~/.ssh/known_hosts
+-'  1  0  ~/.ssh/known_hosts
+-'  2  0  ~/.ssh/known_hosts
+-'  58  0  ~/ownCloud/Documents/Master2/essais.html
+-'  18  19  ~/ownCloud/Documents/Master2/essai_ind.html
+-'  10  33  ~/ownCloud/Documents/Master2/essai.html
+-'  1  0  ~/ownCloud/Documents/Master2/essai.html
+-'  6  8  ~/ownCloud/tiddly/tiddlywiki.info
+-'  211  2  /media/devel/sources/projets/training/ssh/GetLogFilesOverSSH.pm
+-'  185  23  /media/devel/sources/projets/training/ssh/GetLogFilesOverSSH.pm
+-'  165  0  /media/devel/sources/projets/training/ssh/GetLogFilesOverSSH.pm
+-'  4  0  /media/devel/sources/projets/training/ssh/tags
+-'  9  0  /media/devel/sources/projets/training/ssh/tcf/GetLogFilesOverSSH.pl
+
+# Historique des marques dans les fichiers (les plus récentes en premier) :
+
+> ~/.inputrc
+	"	1	0
+
+> /media/devel/sources/projets/training/ssh/test_list.pl
+	"	2	0
+	.	5	0
+	+	2	11
+	+	8	0
+	+	3	9
+	+	6	19
+	+	9	37
+	+	12	0
+	+	10	31
+	+	9	12
+	+	6	8
+	+	9	4
+	+	6	2
+	+	9	19
+	+	9	6
+	+	6	0
+	+	4	18
+	+	5	15
+	+	8	0
+	+	5	0
+	+	5	11
+	+	5	16
+	+	5	21
+	+	5	19
+	+	9	8
+	+	5	0
+	+	6	0
+	+	6	0
+	+	7	0
+	+	8	0
+	+	9	0
+	+	6	0
+	+	5	0
+
+> /media/devel/sources/projets/training/ssh/GetLogFilesOverSSH.pm
+	"	276	12
+	^	274	131
+	.	274	130
+	+	240	44
+	+	102	45
+	+	240	41
+	+	220	0
+	+	217	0
+	+	215	28
+	+	214	0
+	+	215	41
+	+	217	0
+	+	220	0
+	+	216	11
+	+	218	9
+	+	219	10
+	+	220	0
+	+	243	28
+	+	235	14
+	+	208	9
+	+	210	3
+	+	204	24
+	+	207	59
+	+	245	0
+	+	268	0
+	+	257	17
+	+	258	0
+	+	264	0
+	+	261	0
+	+	259	13
+	+	262	20
+	+	263	12
+	+	251	9
+	+	253	4
+	+	266	10
+	+	265	37
+	+	249	79
+	+	242	12
+	+	243	32
+	+	242	0
+	+	224	49
+	+	244	24
+	+	245	0
+	+	281	10
+	+	97	0
+	+	315	0
+	+	282	17
+	+	313	0
+	+	311	0
+	+	285	45
+	+	288	0
+	+	287	3
+	+	287	46
+	+	288	0
+	+	289	0
+	+	290	0
+	+	310	0
+	+	299	0
+	+	299	0
+	+	301	0
+	+	310	0
+	+	307	5
+	+	305	0
+	+	304	14
+	+	284	19
+	+	305	0
+	+	308	26
+	+	299	65
+	+	291	13
+	+	293	44
+	+	295	0
+	+	292	15
+	+	295	0
+	+	292	31
+	+	293	31
+	+	294	17
+	+	295	0
+	+	299	0
+	+	298	38
+	+	299	46
+	+	292	42
+	+	298	63
+	+	296	13
+	+	299	44
+	+	297	17
+	+	292	33
+	+	141	9
+	+	142	18
+	+	292	33
+	+	298	4
+	+	297	25
+	+	296	0
+	+	298	54
+	+	299	70
+	+	296	20
+	+	300	0
+	+	299	4
+	+	300	64
+	+	298	5
+	+	309	17
+	+	275	29
+	+	279	3
+	+	274	130
+	l	292	24
+	m	292	24
+
+> /media/devel/sources/projets/training/ssh/Singleton.pm
+	"	32	17
+	^	40	21
+	.	40	21
+	+	1	8
+	+	4	20
+	+	10	38
+	+	7	23
+	+	10	0
+	+	22	46
+	+	24	94
+	+	22	21
+	+	22	13
+	+	23	7
+	+	24	24
+	+	29	0
+	+	28	21
+	+	24	0
+	+	22	0
+	+	37	17
+	+	45	0
+	+	42	3
+	+	38	17
+	+	38	4
+	+	38	13
+	+	38	44
+	+	35	0
+	+	35	13
+	+	38	7
+	+	35	10
+	+	38	18
+	+	38	23
+	+	29	0
+	+	35	0
+	+	23	44
+	+	42	44
+	+	44	21
+	+	34	0
+	+	33	26
+	+	42	45
+	+	37	19
+	+	38	22
+	+	43	21
+	+	42	38
+	+	38	9
+	+	38	0
+	+	42	0
+	+	38	12
+	+	42	10
+	+	43	11
+	+	38	40
+	+	35	0
+	+	23	0
+	+	38	39
+	+	42	28
+	+	38	15
+	+	43	0
+	+	28	2
+	+	38	120
+	+	35	0
+	+	41	14
+	+	39	0
+	+	41	2
+	+	41	55
+	+	42	12
+	+	41	2
+	+	42	20
+	+	41	4
+	+	42	16
+	+	2	0
+	+	42	21
+	+	41	0
+	+	45	0
+	+	34	0
+	+	24	0
+	+	45	10
+	+	34	0
+	+	45	0
+	+	4	13
+	+	40	21
+
+> /media/devel/sources/projets/training/ssh/test_getLog.pl
+	"	1	18
+	^	3	75
+	.	3	74
+	+	3	50
+	+	6	19
+	+	3	74
+
+> /media/devel/sources/projets/training/ssh/test_connect.pl
+	"	1	12
+	^	17	37
+	.	17	36
+	+	8	0
+	+	6	0
+	+	4	3
+	+	1	18
+	+	9	15
+	+	20	26
+	+	10	0
+	+	4	8
+	+	8	0
+	+	10	0
+	+	4	62
+	+	17	27
+	+	18	19
+	+	19	0
+	+	18	14
+	+	17	14
+	+	18	19
+	+	18	17
+	+	17	18
+	+	15	0
+	+	17	7
+	+	18	9
+	+	17	36
+
+> /media/devel/sources/projets/training/ssh/TCF.properties
+	"	10	36
+	^	6	22
+	.	10	36
+	+	4	23
+	+	5	13
+	+	6	0
+	+	9	40
+	+	10	36
+
+> /media/devel/sources/projets/training/ssh/test_orDefined.pl
+	"	7	7
+	^	18	8
+	.	18	7
+	+	3	23
+	+	4	23
+	+	7	30
+	+	6	0
+	+	8	7
+	+	7	30
+	+	8	30
+	+	14	0
+	+	12	16
+	+	10	8
+	+	12	35
+	+	26	10
+	+	24	0
+	+	23	0
+	+	18	29
+	+	22	0
+	+	19	19
+	+	27	25
+	+	23	0
+	+	25	0
+	+	19	18
+	+	18	28
+	+	19	18
+	+	20	13
+	+	18	6
+	+	14	0
+	+	18	7
+
+> /media/devel/sources/projets/training/ssh/tcf/GetLogFilesOverSSH.pl
+	"	9	0
+
+> /media/devel/sources/projets/training/ssh/tags
+	"	4	0
+
+> /media/devel/sources/projets/training/ssh/test_singleton.pl
+	"	4	0
+	.	3	0
+	+	4	32
+	+	11	5
+	+	11	23
+	+	11	0
+	+	11	27
+	+	11	27
+	+	2	4
+	+	4	45
+	+	11	24
+	+	11	10
+	+	3	0
+	+	4	46
+	+	11	0
+	+	11	50
+	+	11	4
+	+	11	22
+	+	11	0
+	+	4	48
+	+	6	24
+	+	8	0
+	+	10	0
+	+	8	20
+	+	10	19
+	+	5	45
+	+	7	21
+	+	9	22
+	+	11	25
+	+	11	22
+	+	11	22
+	+	3	22
+	+	11	0
+	+	3	0
+
+> /media/devel/sources/projets/training/ssh/singleton.pm
+	"	1	0
+	^	23	63
+	.	23	62
+	+	31	1
+	+	17	0
+	+	25	1
+	+	27	14
+	+	29	0
+	+	8	29
+	+	13	3
+	+	12	18
+	+	17	0
+	+	10	6
+	+	3	12
+	+	8	40
+	+	10	8
+	+	16	19
+	+	17	0
+	+	16	0
+	+	13	0
+	+	14	0
+	+	21	35
+	+	23	62
+
+> ~/.bashrc
+	"	18	0
+	.	7	0
+	+	11	0
+	+	8	8
+	+	10	81
+	+	6	0
+	+	4	0
+	+	4	0
+	+	4	0
+	+	9	30
+	+	13	0
+	+	12	28
+	+	13	0
+	+	7	0
+
+> ~/.bash
+	"	1	0
+
+> ~/ownCloud/Documents/utc/supports_cours/achats/livres/algorithmique
+	"	9	26
+	^	9	27
+	.	9	0
+	+	8	0
+	+	9	0
+
+> ~/.mpdconf
+	"	2	0
+
+> ~/Documents/a conserver/transac_poussette.txt
+	"	12	40
+	^	12	41
+	.	12	29
+	+	12	29
+
+> ~/ownCloud/Documents/infos/pediatre
+	"	3	0
+	^	3	26
+	.	3	0
+	+	2	47
+	+	4	0
+	+	2	18
+	+	3	58
+	+	4	0
+	+	3	3
+	+	3	0
+
+> ~/pediatre
+	"	1	13
+	^	1	14
+	.	1	13
+	+	1	13
+
+> ~/.htaccess
+	"	11	21
+	^	12	27
+	.	12	26
+	+	11	32
+	+	12	26
+
+> /usr/lib/systemd/system/transmission.service
+	"	9	0
+
+> /media/devel/sources/pkg/hplip/PKGBUILD
+	"	33	0
+	^	60	0
+	.	33	0
+	+	18	0
+	+	53	12
+	+	58	0
+	+	60	0
+	+	53	8
+	+	33	0
+
+> /etc/pacman.d/mirrorlist
+	"	1	1
+	.	113	0
+	+	95	0
+	+	96	0
+	+	97	0
+	+	98	0
+	+	99	0
+	+	100	0
+	+	101	0
+	+	102	0
+	+	103	0
+	+	104	0
+	+	105	0
+	+	106	0
+	+	107	0
+	+	113	0
+
+> ~/wsu.pdf
+	"	1	0
+
+> ~/wsu.
+	"	1	0
+
+> ~/labs/echange_vm/vagrant/discourse/discourse/Vagrantfile
+	"	7	0
+
+> ~/inside/OvhApi-perl-1.1/OvhApi.pm
+	"	258	0
+
+> ~/.ssh/known_hosts
+	"	16	0
+	.	17	0
+	+	8	326
+	+	8	0
+	+	10	0
+	+	8	0
+	+	2	0
+	+	17	0
+
+> ~/ownCloud/Documents/Master2/essai.html
+	"	10	33
+
+> ~/ownCloud/Documents/Master2/essai_ind.html
+	"	18	19
+	^	18	14
+	.	18	0
+	+	18	0
+
+> ~/ownCloud/Documents/Master2/essais.html
+	"	58	0
+
+> ~/ownCloud/tiddly/tiddlywiki.info
+	"	6	8
+	^	10	6
+	.	6	0
+	+	10	5
+	+	6	0
+
+> ~/ownCloud/tiddly/aie/tiddly/tiddlywiki.info
+	"	12	13
+	^	12	14
+	.	12	13
+	+	14	5
+	+	12	13
+
+> /media/VMs/tiddly/tiddlywiki/editions/fr-FR/tiddlywiki.info
+	"	1	0
+
+> ~/ownCloud/tiddly/aie/tiddly/tiddl
+	"	1	0
+
+> ~/bin/mon_wiki.sh
+	"	2	40
+	^	2	41
+	.	2	112
+	+	2	112
+
+> ~/.profile
+	"	9	28
+	^	9	29
+	.	9	28
+	+	6	0
+	+	6	53
+	+	7	33
+	+	8	0
+	+	7	0
+	+	1	0
+	+	7	0
+	+	9	28
+
+> ~/html
+	"	55	0
+
+> ~/a.reponse
+	"	1	0
+
+> /media/VMs/tiddly/nodejs/tiddlywiki.js
+	"	13	0
+
+> /media/VMs/tiddly/nodejs/package.json
+	"	8	0
+	.	16	12
+	+	16	12
+
+> /media/VMs/tiddly/nodejs/server.js
+	"	9	0
+
+> /media/VMs/tiddly/tiddlywiki/server.js
+	"	1	0
+	^	11	7
+	.	11	6
+	+	11	11
+	+	12	3
+	+	11	0
+	+	12	3
+	+	11	6
+
+> ~/Bureau/tiddlers.tid
+	"	1	0
+
+> /media/VMs/tiddly/tiddlywiki/editions/fr-FR-server/tiddlywiki.info
+	"	8	0
+
+> /media/VMs/tiddly/tiddlywiki/.openshift/action_hooks/post-deploy
+	"	2	3
+
+> /media/VMs/tiddly/tiddlywiki/editions/full/tiddlywiki.info
+	"	51	0
+
+> /media/VMs/tiddly/tiddlywiki/editions/server/tiddlywiki.info
+	"	1	0
+
+> /media/VMs/tiddly/tiddlywiki/readme.md
+	"	1	0
+
+> /media/VMs/tiddly/tiddlywiki/package.json
+	"	25	0
+
+> /media/VMs/tiddly/nodejs/.openshift/action_hooks/README.md
+	"	1	0
+
+> /media/VMs/tiddly/nodejs/readme.md
+	"	1	0
+
+> /media/VMs/tiddly/nodejs/README.md
+	"	1	0
+
+> /media/VMs/tiddly/tiddlywikiblog/README.md
+	"	18	75
+	^	18	76
+	.	18	76
+	+	17	42
+	+	8	8
+	+	8	0
+	+	5	0
+	+	4	0
+	+	8	0
+	+	11	11
+	+	3	0
+	+	17	56
+	+	12	57
+	+	13	106
+	+	17	0
+	+	15	45
+	+	17	2
+	+	15	3
+	+	14	3
+	+	13	3
+	+	12	3
+	+	18	76
+	+	18	76
+
+> /media/VMs/tiddly/tiddlywikiblog/dotclear/inc/config.php
+	"	27	19
+	^	27	29
+	.	27	19
+	+	27	40
+	+	28	0
+	+	27	28
+	+	36	23
+	+	27	19
+
+> /media/VMs/tiddly/tiddlywikiblog/.openshift/action_hooks/build
+	"	4	0
+	.	5	0
+	+	2	5
+	+	3	10
+	+	5	0
+
+> /media/VMs/tiddly/dotclear_repo/dotclear/DB
+	"	9	0
+
+> /media/VMs/tiddly/tiddlywikiblog/index.php
+	"	274	0
+
+> /media/VMs/tiddly/dotclear_repo/dotclear/index.php
+	"	22	2
+
+> /media/VMs/tiddly/dotclear_repo/config.php
+	"	14	27
+
+> /media/VMs/tiddly/dotclear/dotclear/DB
+	"	9	41
+	^	9	42
+	.	9	0
+	+	7	85
+	+	10	0
+	+	8	0
+	+	9	0
+
+> /media/VMs/tiddly/dotclear/dotclear-loader.php
+	"	146	0
+
+> /media/VMs/tiddly/dotclear/dotclear/README.md
+	"	60	21
+	.	61	0
+	+	61	0
+
+> /media/VMs/tiddly/hubic/swift2
+	"	1	0
+	^	1	90
+	.	1	89
+	+	1	83
+	+	1	0
+	+	1	89
+	m	1	0
+
+> /media/VMs/tiddly/hubic/swift
+	"	1	43
+	^	1	60
+	.	1	59
+	+	1	59
+	l	1	0
+
+> /media/VMs/tiddly/hubic/links
+	"	1	45
+	^	1	46
+	.	1	45
+	+	1	45
+
+> /media/VMs/tiddly/hubic/essai
+	"	1	15
+	^	1	57
+	.	1	38
+	+	1	38
+
+> /media/VMs/tiddly/hubic/4
+	"	4	0
+	^	4	12
+	.	4	11
+	+	4	239
+	+	4	88
+	+	3	6
+	+	1	18
+	+	2	149
+	+	3	0
+	+	2	5
+	+	2	151
+	+	4	44
+	+	2	80
+	+	4	11
+	m	4	0
+
+> /media/VMs/tiddly/hubic/5
+	"	1	241
+	^	1	242
+	.	1	241
+	+	1	226
+	+	2	0
+	+	2	0
+	+	1	63
+	+	1	241
+
+> /media/VMs/tiddly/hubic/3
+	"	1	148
+	^	1	149
+	.	1	148
+	+	1	58
+	+	1	57
+	+	2	0
+	+	1	61
+	+	1	148
+
+> /media/VMs/tiddly/hubic/2
+	"	1	14
+	^	1	20
+	.	1	19
+	+	1	173
+	+	1	52
+	+	1	16
+	+	1	59
+	+	1	119
+	+	2	0
+	+	2	0
+	+	2	0
+	+	2	0
+	+	2	0
+	+	2	0
+	+	1	19
+	l	1	0
+
+> ~/openstack/ec2rc.sh
+	"	8	0
+
+> /media/VMs/tiddly/hubic/1
+	"	1	304
+	^	1	248
+	.	1	247
+	+	1	413
+	+	2	0
+	+	1	160
+	+	1	190
+	+	1	195
+	+	1	229
+	+	1	229
+	+	1	238
+	+	2	0
+	+	2	0
+	+	1	91
+	+	2	0
+	+	1	90
+	+	1	247
+
+> ~/openstack/prep_tools
+	"	1	18
+	^	1	19
+	.	1	18
+	+	6	3
+	+	1	18
+
+> ~/openstack/prep_env
+	"	1	0
+	^	1	0
+
+> /media/VMs/tiddly/nodejs/plugins/tiddlywiki/tiddlyweb/tiddlywebadaptor.js
+	"	79	0
+
+> /media/VMs/tiddly/TiddlyWiki5/server.js
+	"	1	0
+	^	15	17
+	.	4	0
+	+	15	16
+	+	4	0
+
+> /media/VMs/tiddly/TiddlyWiki5/package.json
+	"	22	16
+	^	16	24
+	.	16	23
+	+	16	23
+
+> ~/.i3/config
+	"	150	55
+	^	150	56
+	.	150	55
+	+	153	12
+	+	134	16
+	+	133	16
+	+	132	16
+	+	131	16
+	+	43	13
+	+	44	13
+	+	45	13
+	+	46	13
+	+	55	19
+	+	56	19
+	+	57	19
+	+	58	19
+	+	67	13
+	+	70	13
+	+	67	13
+	+	70	14
+	+	67	13
+	+	158	8
+	+	159	0
+	+	158	30
+	+	152	0
+	+	146	0
+	+	146	100
+	+	148	0
+	+	146	72
+	+	152	73
+	+	152	0
+	+	152	0
+	+	151	0
+	+	149	0
+	+	150	0
+	+	146	61
+	+	147	61
+	+	150	38
+	+	146	82
+	+	147	82
+	+	150	101
+	+	146	74
+	+	147	74
+	+	150	99
+	+	146	57
+	+	147	58
+	+	150	55
+	m	75	12
+
+> ~/.i3/plus
+	"	2	29
+	^	2	36
+	.	2	29
+	+	6	32
+	+	4	10
+	+	5	6
+	+	6	21
+	+	6	28
+	+	12	0
+	+	11	4
+	+	9	0
+	+	9	0
+	+	10	1
+	+	13	1
+	+	12	20
+	+	9	16
+	+	6	0
+	+	2	41
+	+	3	1
+	+	15	3
+	+	4	11
+	+	7	1
+	+	1	8
+	+	6	24
+	+	14	0
+	+	2	36
+	+	4	5
+	+	7	6
+	+	2	35
+	+	7	0
+	+	2	29
+
+> .i3/plus
+	"	1	0
+
+> ~/.asoundrc
+	"	1	0
+
+> ~/nw/i3status.conf2
+	"	81	0
+	^	81	29
+	.	10	0
+	+	81	28
+	+	10	0
+
+> ~/nw/gist6063132-d4d165949fe5ba3ca5d075755977694a9be650bc/i3status.conf
+	"	113	0
+
+> ~/i3status.conf.old
+	"	57	0
+
+> /etc/i3status.conf
+	"	1	0
+	.	56	0
+	+	56	0
+
+> ~/nw/i3status.conf
+	"	57	0
+
+> ~/.i3/i3conky
+	"	1	0
+	^	43	25
+	.	11	0
+	+	1	13
+	+	1	13
+	+	43	24
+	+	11	0
+
+> ~/i3status.conf
+	"	22	0
+
+> /usr/bin/i3status
+	"	1	0
+
+> ~/.tmux.conf
+	"	1	0
+
+> /media/devel/sources/projets/associations/openshift/roundcube/php/plugins/virtuser_file/virtuser_file.php
+	"	1	0
+
+> /media/devel/sources/projets/associations/openshift/roundcube/php/config/db.inc.php
+	"	7	41
+
+> /media/devel/sources/projets/associations/openshift/roundcube/index.php
+	"	165	0
+
+> /media/devel/sources/projets/associations/openshift/mailgun/Gemfile
+	"	1	0
+
+> /media/devel/sources/projets/associations/openshift/mailgun/README.md
+	"	1	0
+
+> /media/devel/sources/projets/associations/openshift/mailgun/config.ru
+	"	1	0
+	^	11	62
+	.	6	55
+	+	14	55
+	+	15	39
+	+	22	31
+	+	26	31
+	+	14	34
+	+	11	61
+	+	6	55
+
+> /media/devel/sources/projets/associations/openshift/mailgun/send_mail.rb
+	"	1	0
+
+> /media/devel/sources/projets/associations/openshift/roundcube/php/config/main.inc.php
+	"	167	31
+
+> /media/devel/sources/projets/associations/openshift/recap_roundcube
+	"	39	0
+	^	39	0
+	.	3	0
+	+	39	0
+	+	3	0

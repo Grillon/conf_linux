@@ -1,0 +1,3 @@
+URxvt.inputMethod: ibus
+URxvt.preeditType: OverTheSpot
+
