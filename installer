@@ -9,14 +9,36 @@ export PATH="$HOME/.linuxbrew/bin:$PATH"
 export MANPATH="$HOME/.linuxbrew/share/man:$MANPATH"
 export INFOPATH="$HOME/.linuxbrew/share/info:$INFOPATH"
 '
+export PATH="$HOME/.linuxbrew/bin:$PATH"
+export MANPATH="$HOME/.linuxbrew/share/man:$MANPATH"
+export INFOPATH="$HOME/.linuxbrew/share/info:$INFOPATH"
 }
 function install_dependencies {
 	sudo yum groupinstall 'Development Tools' && sudo yum install curl git irb python-setuptools ruby
 }
+function install_vimplug {
+curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+}
 function install_nvim_tmux {
 echo 'linux brew is necessary to install it'
-brew install nvim
+brew install neovim/neovim/neovim
 brew install tmux
+}
+
+function install_tpm {
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+}
+
+function install_nvim_health_stuff {
+	brew install gcc
+	brew install python
+	brew install python3
+	brew install ruby
+	brew install xclip
+	pip2 install neovim
+	pip3 install neovim
+	gem install neovim
 }
 
 function config_ln {
@@ -26,6 +48,9 @@ mv nvim nvim_old
 fi
 ln -s $base/.config/nvim
 cd ~
+if [ -f .tmux.conf ];then
+mv .tmux.conf .tmux.conf_old
+fi
 ln -s $base/.tmux.conf
 cd $base
 }
@@ -34,8 +59,13 @@ function auto {
 install_dependencies
 install_brew
 install_nvim_tmux
+install_vimplug
+install_tpm
+install_nvim_health_stuff
 }
-if [ $1 == 'all' ];then
+if [ "$1" == 'all' ];then
 auto
 fi
 config_ln
+cd $base
+tic $TERM
