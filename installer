@@ -67,6 +67,7 @@ function auto {
 	install_brew
 	config_path
 	config_path >> $HOME/.bashrc
+	source $HOME/.bashrc
 	install_nvim_health_stuff
 	config_terminal
 	install_nvim_tmux
@@ -78,4 +79,3 @@ if [ "$1" == 'all' ];then
 fi
 config_ln
 cd $base
-config_path >> $HOME/.bashrc
