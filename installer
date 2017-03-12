@@ -1,0 +1,41 @@
+#!/usr/bin/env bash
+base=$(pwd)
+function install_brew {
+echo "brew install"
+ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Linuxbrew/install/master/install)"
+PATH="$HOME/.linuxbrew/bin:$PATH"
+echo 'add theses lines to your .bashrc :
+export PATH="$HOME/.linuxbrew/bin:$PATH"
+export MANPATH="$HOME/.linuxbrew/share/man:$MANPATH"
+export INFOPATH="$HOME/.linuxbrew/share/info:$INFOPATH"
+'
+}
+function install_dependencies {
+	sudo yum groupinstall 'Development Tools' && sudo yum install curl git irb python-setuptools ruby
+}
+function install_nvim_tmux {
+echo 'linux brew is necessary to install it'
+brew install nvim
+brew install tmux
+}
+
+function config_ln {
+cd ~/.config
+if [ -d nvim ];then
+mv nvim nvim_old
+fi
+ln -s $base/.config/nvim
+cd ~
+ln -s $base/.tmux.conf
+cd $base
+}
+
+function auto {
+install_dependencies
+install_brew
+install_nvim_tmux
+}
+if [ $1 == 'all' ];then
+auto
+fi
+config_ln

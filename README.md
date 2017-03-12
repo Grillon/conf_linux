@@ -1,2 +1,24 @@
 # conf_linux
-travail d'unification de mes conf pourri linux pour obtenir une belle conf...C'est pas gagné mais j'y crois :-)
+
+Linux home dots files
+
+## What do you need :
+
+* tmux
+* tpm : https://github.com/tmux-plugins/tpm
+* neovim
+* VimPlug
+* gawk
+* i3wm
+* pip
+* py3status
+
+## What you will get :
+
+
+
+## Not finished yet
+
+## Licence
+
+GPLv3
