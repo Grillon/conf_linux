@@ -49,12 +49,12 @@ function config_terminal {
 
 function config_ln {
 	cd $HOME/.config
-	if [ -d nvim ];then
+	if [ ! -d nvim_old ];then
 		mv nvim nvim_old
 	fi
 	ln -s $base/.config/nvim
 	cd $HOME 
-	if [[ -f .tmux.conf ]] && [[ ! -f .tmux.conf_old ]]
+	if [[ ! -f .tmux.conf_old ]]
 	then
 		mv .tmux.conf .tmux.conf_old
 		ln -s $base/.tmux.conf
@@ -68,6 +68,7 @@ function auto {
 	config_path
 	config_path >> $HOME/.bashrc
 	install_nvim_health_stuff
+	config_terminal
 	install_nvim_tmux
 	install_vimplug
 	install_tpm
