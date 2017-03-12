@@ -1,33 +1,36 @@
 #!/usr/bin/env bash
 base=$(pwd)
 function install_brew {
-echo "brew install"
-ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Linuxbrew/install/master/install)"
-PATH="$HOME/.linuxbrew/bin:$PATH"
-echo 'add theses lines to your .bashrc :
-export PATH="$HOME/.linuxbrew/bin:$PATH"
-export MANPATH="$HOME/.linuxbrew/share/man:$MANPATH"
-export INFOPATH="$HOME/.linuxbrew/share/info:$INFOPATH"
-'
-export PATH="$HOME/.linuxbrew/bin:$PATH"
-export MANPATH="$HOME/.linuxbrew/share/man:$MANPATH"
-export INFOPATH="$HOME/.linuxbrew/share/info:$INFOPATH"
+	echo "brew install"
+	ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Linuxbrew/install/master/install)"
+}
+function config_path {
+	grep -qs linuxbrew $HOME/.bashrc
+	if [ $? -eq 0 ];then return
+	fi
+	echo '#add theses lines to your .bashrc :
+	export PATH="$HOME/.linuxbrew/bin:$PATH"
+	export MANPATH="$HOME/.linuxbrew/share/man:$MANPATH"
+	export INFOPATH="$HOME/.linuxbrew/share/info:$INFOPATH"
+	'
 }
 function install_dependencies {
 	sudo yum -y groupinstall 'Development Tools' && sudo yum -y install curl git irb python-setuptools ruby 
 }
 function install_vimplug {
-curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
-    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+	curl -fLo /.local/share/nvim/site/autoload/plug.vim --create-dirs \
+		https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 }
 function install_nvim_tmux {
-echo 'linux brew is necessary to install it'
-brew install neovim/neovim/neovim
-brew install tmux
+	brew install neovim/neovim/neovim
+	pip2 install neovim
+	pip3 install neovim
+	gem install neovim
+	brew install tmux
 }
 
 function install_tpm {
-git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+	git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 }
 
 function install_nvim_health_stuff {
@@ -36,36 +39,42 @@ function install_nvim_health_stuff {
 	brew install python3
 	brew install ruby
 	brew install xclip
-	pip2 install neovim
-	pip3 install neovim
-	gem install neovim
+}
+
+function config_terminal {
+	cd $base
+	infocmp $TERM | sed 's/kbs=^[hH]/kbs=\\177/' > $TERM.ti
+	tic $TERM.ti
 }
 
 function config_ln {
-cd ~/.config
-if [ -d nvim ];then
-mv nvim nvim_old
-fi
-ln -s $base/.config/nvim
-cd ~
-if [ -f .tmux.conf ];then
-mv .tmux.conf .tmux.conf_old
-fi
-ln -s $base/.tmux.conf
-cd $base
+	cd $HOME/.config
+	if [ -d nvim ];then
+		mv nvim nvim_old
+	fi
+	ln -s $base/.config/nvim
+	cd $HOME 
+	if [[ -f .tmux.conf ]] && [[ ! -f .tmux.conf_old ]]
+	then
+		mv .tmux.conf .tmux.conf_old
+		ln -s $base/.tmux.conf
+	fi
+	cd $base
 }
 
 function auto {
-install_dependencies
-install_brew
-install_nvim_tmux
-install_vimplug
-install_tpm
-install_nvim_health_stuff
+	install_dependencies
+	install_brew
+	config_path
+	config_path >> $HOME/.bashrc
+	install_nvim_health_stuff
+	install_nvim_tmux
+	install_vimplug
+	install_tpm
 }
 if [ "$1" == 'all' ];then
-auto
+	auto
 fi
 config_ln
 cd $base
-tic $TERM
+config_path >> $HOME/.bashrc
