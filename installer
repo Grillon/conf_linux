@@ -14,7 +14,7 @@ export MANPATH="$HOME/.linuxbrew/share/man:$MANPATH"
 export INFOPATH="$HOME/.linuxbrew/share/info:$INFOPATH"
 }
 function install_dependencies {
-	sudo yum groupinstall 'Development Tools' && sudo yum install curl git irb python-setuptools ruby
+	sudo yum -y groupinstall 'Development Tools' && sudo yum -y install curl git irb python-setuptools ruby 
 }
 function install_vimplug {
 curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
