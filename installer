@@ -14,9 +14,14 @@ function config_path {
 	export INFOPATH="$HOME/.linuxbrew/share/info:$INFOPATH"
 	'
 }
-function install_dependencies {
+function install_dependencies_redhat {
 	sudo yum -y groupinstall 'Development Tools' && sudo yum -y install curl git irb python-setuptools ruby 
 }
+
+function install_dependencies_debian {
+sudo apt-get install build-essential curl git python-setuptools ruby
+}
+
 function install_vimplug {
 	curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
 		https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
@@ -64,8 +69,18 @@ function config_ln {
 	cd $base
 }
 
+function detect_os {
+if [ -f /etc/debian_version ];then
+	myos=debian
+elif [ -f /etc/redhat-release ];then
+	myos=redhat
+else
+	myos=unknown
+fi
+}
+
 function auto {
-	install_dependencies
+	install_dependencies_$myos
 	install_brew
 	config_path
 	config_path >> $HOME/.bashrc
@@ -76,6 +91,7 @@ function auto {
 	install_vimplug
 	install_tpm
 }
+detect_os
 if [ "$1" == 'all' ];then
 	auto
 fi

@@ -17,6 +17,11 @@ Plug 'airblade/vim-rooter'
 Plug 'wellle/tmux-complete.vim'
 Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-fugitive'
+Plug 'vim-perl/vim-perl', { 'for': 'perl', 'do': 'make clean carp dancer highlight-all-pragmas moose test-more try-tiny' }
+Plug 'pearofducks/ansible-vim'
+Plug 'freitass/todo.txt-vim'
+Plug 'chrisbra/csv.vim'
+
 
 
  
@@ -29,6 +34,15 @@ Plug 'neomake/neomake'
  
 " Initialize plugin system
 call plug#end()
+
+"""""""""""""""""""""""""
+""  confort 		"
+"""""""""""""""""""""""""
+
+colorscheme delek
+set shiftwidth=2
+set tabstop=2 
+set softtabstop=2
  
 """""""""""""""""""""""""
 """"    deoplete     """"
