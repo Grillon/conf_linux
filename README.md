@@ -2,6 +2,11 @@
 
 Linux home dots files
 
+## Supported distro
+
+* Debian
+* Redhat
+
 ## What do you need :
 
 * gawk
