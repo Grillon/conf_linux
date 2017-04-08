@@ -1,0 +1,111 @@
+#!/usr/bin/env bash
+base=$(pwd)
+function install_guix_as_root {
+	echo "guix install you should be root"
+	cd systeme-portable
+	./install_guix.sh -d && ./install_guix.sh -i 
+}
+function install_guix {
+	echo "guix install"
+	cd systeme-portable
+	./install_guix.sh -c && ./install_guix.sh -l && ./install_guix.sh -u && ./install_guix.sh -m
+}
+
+function install_vimplug {
+	curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
+		https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+}
+function p3neovim {
+	virtualenv p3neovim 
+	rm -rf p3neovim/
+	virtualenv p3neovim -p python3
+	source p3neovim/bin/activate
+	pip install neovim
+	deactivate 
+}
+function p2neovim {
+	virtualenv p2neovim
+	source p2neovim/bin/activate
+	pip install activate
+	pip install neovim
+	deactivate 
+}
+function install_nvim_tmux {
+	guix package -i neovim
+	p3neovim
+	p2neovim
+	gem install --user neovim
+	guix package -i tmux
+}
+
+function update_nvim_init {
+	ln -s $base/p2neovim ~
+	ln -s $base/p3neovim ~
+	echo '"""""""""""""""""""""""""
+	"  python virtualenv    "
+	"""""""""""""""""""""""""
+	let g:python_host_prog = "$HOME/p2neovim/bin/python"
+	let g:python3_host_prog = "$HOME/p3neovim/bin/python"
+	' >> $base/.config/nvim/init.vim
+}
+
+
+
+function install_tpm {
+	git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+}
+
+function install_nvim_health_stuff {
+	guix package -i curl openssl make gcc gcc-toolchain ruby python-virtualenv xclip
+}
+
+function config_terminal {
+	cd $base
+	infocmp $TERM | sed 's/kbs=^[hH]/kbs=\\177/' > $TERM.ti
+	tic $TERM.ti
+}
+
+function config_ln {
+	cd $HOME/.config
+	if [ ! -d nvim_old ];then
+		mv nvim nvim_old
+	fi
+	ln -s $base/.config/nvim
+	cd $HOME 
+	if [[ ! -f .tmux.conf_old ]]
+	then
+		mv .tmux.conf .tmux.conf_old
+		ln -s $base/.tmux.conf
+	fi
+	cd $base
+}
+
+function detect_os {
+	if [ -f /etc/debian_version ];then
+		myos=debian
+	elif [ -f /etc/redhat-release ];then
+		myos=redhat
+	else
+		myos=unknown
+	fi
+}
+
+function user {
+	install_dependencies_$myos
+	install_guix
+	cd $base
+	source $HOME/.bashrc
+	install_nvim_health_stuff
+	config_terminal
+	install_nvim_tmux
+	install_vimplug
+	install_tpm
+}
+detect_os
+if [ "$1" == 'user' ];then
+	user
+elif [ "$1" == 'root' ];then
+	root
+fi
+config_ln
+cd $base

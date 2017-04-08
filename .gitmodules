@@ -1,0 +1,3 @@
+[submodule "systeme-portable"]
+	path = systeme-portable
+	url = git@github.com:Grillon/systeme-portable.git
