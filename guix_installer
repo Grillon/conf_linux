@@ -91,7 +91,6 @@ function detect_os {
 }
 
 function user {
-	install_dependencies_$myos
 	install_guix
 	cd $base
 	source $HOME/.bashrc
@@ -105,7 +104,7 @@ detect_os
 if [ "$1" == 'user' ];then
 	user
 elif [ "$1" == 'root' ];then
-	root
+	install_guix_as_root
 fi
 config_ln
 cd $base
