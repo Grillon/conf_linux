@@ -1,0 +1,59 @@
+
+health#deoplete#check
+========================================================================
+## deoplete.nvim
+  - SUCCESS: has("nvim") was successful
+  - SUCCESS: has("python3") was successful
+  - INFO: If you're still having problems, try the following commands:
+    $ export NVIM_PYTHON_LOG_FILE=/tmp/log
+    $ export NVIM_PYTHON_LOG_LEVEL=DEBUG
+    $ nvim
+    $ cat /tmp/log_{PID}
+    and then create an issue on github
+
+health#nvim#check
+========================================================================
+## Configuration
+  - SUCCESS: no issues found
+
+## Performance
+  - SUCCESS: Build type: RelWithDebInfo
+
+## Remote Plugins
+  - SUCCESS: Up to date
+
+## terminfo
+  - INFO: key_backspace terminfo entry: key_backspace=\177,
+
+health#provider#check
+========================================================================
+## Clipboard
+  - SUCCESS: Clipboard tool found: xclip
+
+## Python 2 provider
+  - INFO: `g:python_host_prog` is not set.  Searching for python2 in the environment.
+  - INFO: Executable: /usr/bin/python2
+  - ERROR: Command error (3) /usr/bin/python2 -c import neovim; print(neovim.__file__): Traceback (most recent call last):  File "<string>", line 1, in <module>  File "/home/user/.guix-profile/lib/python3.5/site-packages/neovim/__init__.py", line 11, in <module>    from .msgpack_rpc import (ErrorResponse, child_session, socket_session,  File "/home/user/.guix-profile/lib/python3.5/site-packages/neovim/msgpack_rpc/__init__.py", line 10, in <module>    from .session import ErrorResponse, Session  File "/home/user/.guix-profile/lib/python3.5/site-packages/neovim/msgpack_rpc/session.py", line 7, in <module>    import greenletImportError: No module named greenlet
+  - INFO: Python2 version: 2.7.9
+  - INFO: python2-neovim version: unable to find nvim executable
+  - ERROR: Neovim Python client is not installed.
+    - SUGGESTIONS:
+      - Error found was: unable to find nvim executable
+      - Use the command `$ pip2 install neovim`
+  - WARNING: Latest python2-neovim is NOT installed: 0.1.13
+
+## Python 3 provider
+  - INFO: `g:python3_host_prog` is not set.  Searching for python3 in the environment.
+  - INFO: There are multiple python3 executables found.  Set "g:python3_host_prog" to avoid surprises.
+  - INFO: Executable: /home/user/.guix-profile/bin/python3
+  - INFO: Other python executable: /usr/bin/python3
+  - INFO: Python3 version: 3.5.3
+  - INFO: python3-neovim version: 0.1.13
+  - SUCCESS: Latest python3-neovim is installed: 0.1.13
+
+## Ruby provider
+  - SUCCESS: Found up-to-date neovim RubyGem
+  - INFO: Ruby Version: ruby 2.3.4p301 (2017-03-30 revision 58214) [x86_64-linux]
+  - INFO: Host Executable: /home/user/.guix-profile/bin/neovim-ruby-host
+  - INFO: Host Version: 0.3.3
+
