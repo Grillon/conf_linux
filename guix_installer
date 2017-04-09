@@ -16,17 +16,14 @@ function install_vimplug {
 		https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 }
 function p3neovim {
-	virtualenv p3neovim 
-	rm -rf p3neovim/
 	virtualenv p3neovim -p python3
 	source p3neovim/bin/activate
 	pip install neovim
 	deactivate 
 }
 function p2neovim {
-	virtualenv p2neovim
+	virtualenv p2neovim -p python2
 	source p2neovim/bin/activate
-	pip install activate
 	pip install neovim
 	deactivate 
 }
@@ -44,9 +41,9 @@ function update_nvim_init {
 	echo '"""""""""""""""""""""""""
 	"  python virtualenv    "
 	"""""""""""""""""""""""""
-	let g:python_host_prog = "$HOME/p2neovim/bin/python"
-	let g:python3_host_prog = "$HOME/p3neovim/bin/python"
-	' >> $base/.config/nvim/init.vim
+	let g:python_host_prog = "HOME/p2neovim/bin/python"
+	let g:python3_host_prog = "HOME/p3neovim/bin/python"
+	' | sed "s#HOME#$HOME#g" >> $base/.config/nvim/init.vim
 }
 
 
@@ -99,12 +96,15 @@ function user {
 	install_nvim_tmux
 	install_vimplug
 	install_tpm
+	update_nvim_init
+	config_ln
 }
 detect_os
 if [ "$1" == 'user' ];then
 	user
 elif [ "$1" == 'root' ];then
 	install_guix_as_root
+else 
+$1
 fi
-config_ln
 cd $base
