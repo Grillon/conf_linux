@@ -21,6 +21,11 @@ Plug 'vim-perl/vim-perl', { 'for': 'perl', 'do': 'make clean carp dancer highlig
 Plug 'pearofducks/ansible-vim'
 Plug 'freitass/todo.txt-vim'
 Plug 'chrisbra/csv.vim'
+Plug 'mattn/emmet-vim'
+Plug 'mattn/webapi-vim'
+Plug 'Shutnik/jshint2.vim'
+Plug 'lervag/vimtex'
+
 
 
 
