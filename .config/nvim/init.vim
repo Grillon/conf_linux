@@ -21,11 +21,14 @@ Plug 'vim-perl/vim-perl', { 'for': 'perl', 'do': 'make clean carp dancer highlig
 Plug 'pearofducks/ansible-vim'
 Plug 'freitass/todo.txt-vim'
 Plug 'chrisbra/csv.vim'
+Plug 'marijnh/tern_for_vim'
+Plug 'arakashic/nvim-colors-solarized'
 Plug 'mattn/emmet-vim'
-Plug 'mattn/webapi-vim'
 Plug 'Shutnik/jshint2.vim'
-Plug 'lervag/vimtex'
-
+Plug 'derekwyatt/vim-scala'
+Plug 'vim-scripts/groovy.vim'
+Plug 'vim-scripts/groovyindent-unix'
+Plug 'martinda/Jenkinsfile-vim-syntax'
 
 
 
@@ -48,6 +51,17 @@ colorscheme delek
 set shiftwidth=2
 set tabstop=2 
 set softtabstop=2
+nmap =j :%!python -m json.tool<CR>
+
+"""""""""""""""""""""""""
+"" solarized "
+"""""""""""""""""""""""""
+let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+set background=dark " or light
+" colorscheme solarized
+hi diffAdd          ctermfg=Black ctermbg=Green guifg=White guibg=Green
+hi diffChange           ctermfg=Black ctermbg=Yellow guifg=Blue guibg=Yellow
+
  
 """""""""""""""""""""""""
 """"    deoplete     """"
@@ -165,3 +179,15 @@ call vimfiler#custom#profile('default', 'context', {
 """""""""""""""""""""""""
 "  javacomplete binding "
 """""""""""""""""""""""""
+
+"""""""""""""""""
+" Tern settings
+"""""""""""""""""
+let g:tern_show_argument_hints='on_hold'
+" and 
+let g:tern_map_keys=1
+
+""""""""""""""""""""""""
+"  options perso       "
+""""""""""""""""""""""""
+map <Leader><Space> :noh<CR>
