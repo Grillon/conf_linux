@@ -29,6 +29,7 @@ Plug 'derekwyatt/vim-scala'
 Plug 'vim-scripts/groovy.vim'
 Plug 'vim-scripts/groovyindent-unix'
 Plug 'martinda/Jenkinsfile-vim-syntax'
+Plug 'tpope/vim-repeat'
 
 
 
@@ -39,6 +40,14 @@ Plug 'sbdchd/neoformat'
 Plug 'artur-shaik/vim-javacomplete2'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'neomake/neomake'
+Plug 'udalov/kotlin-vim'
+Plug 'jiangmiao/auto-pairs'
+
+" TypeScript
+
+Plug 'Quramy/tsuquyomi'
+Plug 'leafgarland/typescript-vim'
+
  
 " Initialize plugin system
 call plug#end()
@@ -78,6 +87,13 @@ let g:deoplete#file#enable_buffer_path = 1
 """"  Java Complete  """"
 """""""""""""""""""""""""
 autocmd FileType java setlocal omnifunc=javacomplete#Complete
+
+
+"""""""""""""""""""""""""
+"" TypeScript Complete ""
+"""""""""""""""""""""""""
+
+autocmd BufNewFile,BufRead *.ts setlocal filetype=typescript
  
 """""""""""""""""""""""""
 """"     neomake     """"
