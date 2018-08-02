@@ -30,7 +30,8 @@ Plug 'vim-scripts/groovy.vim'
 Plug 'vim-scripts/groovyindent-unix'
 Plug 'martinda/Jenkinsfile-vim-syntax'
 
-
+" IOT dev
+Plug 'vim-scripts/Arduino-syntax-file'
 
  
 " Java development
