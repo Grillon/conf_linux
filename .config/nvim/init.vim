@@ -2,6 +2,7 @@
 """"    vim-plug     """"
 """""""""""""""""""""""""
 call plug#begin('~/.local/share/nvim/plugged')
+let mapleader="!"
  
 " Others
 
@@ -9,6 +10,7 @@ Plug 'vim-airline/vim-airline'
 Plug 'nhooyr/neoman.vim'
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 Plug 'majutsushi/tagbar'
+Plug 'ctrlpvim/ctrlp.vim'
 Plug 'Shougo/unite.vim'
 Plug 'Shougo/vimfiler.vim'
 Plug 'Shougo/vimshell.vim'
@@ -30,6 +32,9 @@ Plug 'vim-scripts/groovy.vim'
 Plug 'vim-scripts/groovyindent-unix'
 Plug 'martinda/Jenkinsfile-vim-syntax'
 Plug 'tpope/vim-repeat'
+Plug 'tyru/open-browser.vim'
+Plug 'previm/previm'
+
 
 
 
@@ -48,9 +53,32 @@ Plug 'jiangmiao/auto-pairs'
 Plug 'Quramy/tsuquyomi'
 Plug 'leafgarland/typescript-vim'
 
+" Language Client
+Plug 'autozimu/LanguageClient-neovim', { 'do': ':UpdateRemotePlugins' }
+
+" (Optional) Multi-entry selection UI.
+Plug 'junegunn/fzf'
+
+
  
 " Initialize plugin system
 call plug#end()
+"""""""""""""""""""""""""
+"example Language Client"
+"""""""""""""""""""""""""
+" Automatically start language servers.
+let g:LanguageClient_autoStart = 1
+
+" Minimal LSP configuration for JavaScript
+let g:LanguageClient_serverCommands = {}
+if executable('javascript-typescript-stdio')
+  let g:LanguageClient_serverCommands.javascript = ['javascript-typescript-stdio']
+  " Use LanguageServer for omnifunc completion
+  autocmd FileType javascript setlocal omnifunc=LanguageClient#complete
+else
+  echo "javascript-typescript-stdio not installed!\n"
+  :cq
+endif
 
 """""""""""""""""""""""""
 ""  confort 		"

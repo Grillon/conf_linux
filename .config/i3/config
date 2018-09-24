@@ -154,10 +154,20 @@ bindsym $mod+r mode "resize"
 
 #ADDON
 
+#floating window
+for_window [class="copyq"] floating enable
+for_window [class="mattermost-desktop"] floating enable
+
+#copyq
+bindsym $mod+c exec copyq show
+bindsym $mod+m exec mattermost-desktop
+
+
 #screenshots
 
 bindsym Print exec scrot -u '%Y%m%d_%H%M%S.png' -e 'mv $f ~/Images/screenShots/ && gthumb ~/Images/screenShots/$f'
-bindsym Mod1+Print exec scrot -s -e 'mv $f ~/Images/screenShots/ && gthumb ~/Images/screenShots/$f' --release
+#bindsym Mod1+Print exec scrot -s -e 'mv $f ~/Images/screenShots/ && gthumb ~/Images/screenShots/$f' --release
+bindsym --release $mod+Shift+Print exec scrot -s -e 'mv $f ~/Images/screenShots/ && gthumb ~/Images/screenShots/$f'
 bindsym $mod+Print exec scrot -e 'mv $f ~/Images/screenShots/ && gthumb ~/Images/screenShots/$f'
 
 # Start i3bar to display a workspace bar (plus the system information i3status
