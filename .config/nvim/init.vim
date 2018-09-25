@@ -9,6 +9,7 @@ Plug 'vim-airline/vim-airline'
 Plug 'nhooyr/neoman.vim'
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 Plug 'majutsushi/tagbar'
+Plug 'ctrlpvim/ctrlp.vim'
 Plug 'Shougo/unite.vim'
 Plug 'Shougo/vimfiler.vim'
 Plug 'Shougo/vimshell.vim'
@@ -30,6 +31,8 @@ Plug 'vim-scripts/groovy.vim'
 Plug 'vim-scripts/groovyindent-unix'
 Plug 'martinda/Jenkinsfile-vim-syntax'
 Plug 'tpope/vim-repeat'
+"Plug 'c0r73x/neotags.nvim', { 'do' : 'make' }
+Plug 'ludovicchabant/vim-gutentags'
 
 " IOT dev
 Plug 'vim-scripts/Arduino-syntax-file'
@@ -48,6 +51,10 @@ Plug 'jiangmiao/auto-pairs'
 
 Plug 'Quramy/tsuquyomi'
 Plug 'leafgarland/typescript-vim'
+Plug 'Quramy/vim-js-pretty-template'
+Plug 'jason0x43/vim-js-indent'
+Plug 'Quramy/vim-dtsm'
+Plug 'mhartington/vim-typings'
 
  
 " Initialize plugin system
@@ -208,3 +215,20 @@ let g:tern_map_keys=1
 "  options perso       "
 """"""""""""""""""""""""
 map <Leader><Space> :noh<CR>
+
+let g:neotags#typescript#order = 'cnfmoited'
+
+let g:neotags#typescript#c = { 'group': 'javascriptClassTag' }
+let g:neotags#typescript#C = { 'group': 'javascriptConstantTag' }
+let g:neotags#typescript#f = { 'group': 'javascriptFunctionTag' }
+let g:neotags#typescript#o = { 'group': 'javascriptObjectTag' }
+
+let g:neotags#typescript#n = g:neotags#typescript#C
+let g:neotags#typescript#f = g:neotags#typescript#f
+let g:neotags#typescript#m = g:neotags#typescript#f
+let g:neotags#typescript#o = g:neotags#typescript#o
+let g:neotags#typescript#i = g:neotags#typescript#C
+let g:neotags#typescript#t = g:neotags#typescript#C
+let g:neotags#typescript#e = g:neotags#typescript#C
+
+let g:neotags#typescript#d = g:neotags#typescript#c
