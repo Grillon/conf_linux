@@ -2,6 +2,7 @@
 """"    vim-plug     """"
 """""""""""""""""""""""""
 call plug#begin('~/.local/share/nvim/plugged')
+let mapleader="!"
  
 " Others
 
@@ -33,6 +34,9 @@ Plug 'martinda/Jenkinsfile-vim-syntax'
 Plug 'tpope/vim-repeat'
 "Plug 'c0r73x/neotags.nvim', { 'do' : 'make' }
 Plug 'ludovicchabant/vim-gutentags'
+Plug 'tyru/open-browser.vim'
+Plug 'previm/previm'
+
 
 " IOT dev
 Plug 'vim-scripts/Arduino-syntax-file'
@@ -55,6 +59,13 @@ Plug 'Quramy/vim-js-pretty-template'
 Plug 'jason0x43/vim-js-indent'
 Plug 'Quramy/vim-dtsm'
 Plug 'mhartington/vim-typings'
+
+" Language Client
+Plug 'autozimu/LanguageClient-neovim', { 'do': ':UpdateRemotePlugins' }
+
+" (Optional) Multi-entry selection UI.
+Plug 'junegunn/fzf'
+
 
  
 " Initialize plugin system
