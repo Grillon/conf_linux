@@ -177,6 +177,8 @@ for_window [class="mattermost-desktop"] floating enable
 #copyq
 bindsym $mod+c exec copyq show
 bindsym $mod+m exec mattermost-desktop
+bindsym $mod+F1 exec /home/thierry/bin/tiddly.sh start
+bindsym $mod+Shift+F1 exec /home/thierry/bin/tiddly.sh stop
 
 
 #screenshots
