@@ -33,7 +33,6 @@ Plug 'vim-scripts/groovyindent-unix'
 Plug 'martinda/Jenkinsfile-vim-syntax'
 Plug 'tpope/vim-repeat'
 "Plug 'c0r73x/neotags.nvim', { 'do' : 'make' }
-Plug 'ludovicchabant/vim-gutentags'
 Plug 'tyru/open-browser.vim'
 Plug 'previm/previm'
 
@@ -80,6 +79,8 @@ set shiftwidth=2
 set tabstop=2 
 set softtabstop=2
 nmap =j :%!python -m json.tool<CR>
+nnoremap <C-Down> "add"ap
+nnoremap <C-Up> <Up>"add"ap<Up>
 
 """""""""""""""""""""""""
 "" solarized "

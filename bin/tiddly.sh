@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 export PATH=$PATH:/home/thierry/Outils/node-v8.12.0-linux-x64/bin
 export log_file=/home/thierry/go.log
-export firefox_path=/home/thierry/bin/firefox
+export firefox_path=/usr/bin/firefox
 export wiki_url=http://localhost:8080
 function log_wiki {
   message=$1
@@ -28,9 +28,9 @@ if [ "$1" == "stop" ];then
   kill_wiki
   exit 0
 fi
-offline_wiki
+check_wiki
 if [ $? -gt 0 ];then
-  start_wiki 2>&1 >>/home/thierry/go.log && show_wiki >>/home/thierry/go.log 2>&1
+  start_wiki 2>&1 >>/home/thierry/go.log && sleep 1 && show_wiki >>/home/thierry/go.log 2>&1
   exit 0
 else
   show_wiki
