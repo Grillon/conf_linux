@@ -193,6 +193,11 @@ bindsym $mod+Print exec scrot -e 'mv $f ~/Images/screenShots/ && gthumb ~/Images
 # lock screen
 bindsym $mod+shift+z exec i3lock -t -i ~/.config/i3/lisp_lambda.png
 
+# a lancer au boot
+exec --no-startup-id /home/otvy8405/.config/i3/locker.sh
+exec copyq
+
+
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
