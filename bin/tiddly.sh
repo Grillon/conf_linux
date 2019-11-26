@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
-export PATH=$PATH:/home/thierry/Outils/node-v8.12.0-linux-x64/bin
-export log_file=/home/thierry/go.log
+export PATH=$PATH:$HOME/Outils/node-v12.13.1-linux-x64/bin
+export log_file=$HOME/go.log
 export firefox_path=/usr/bin/firefox
 export wiki_url=http://localhost:8080
 function log_wiki {
@@ -13,7 +13,7 @@ function check_wiki {
 }
 function start_wiki {
   log_wiki ${FUNCNAME[0]}
-  (cd /home/thierry/Documents/blocNote/ && tiddlywiki monWiki --server&)
+  (cd $HOME/Documents/blocNote/ && tiddlywiki monWiki --server&)
 }
 function show_wiki {
   log_wiki ${FUNCNAME[0]}
@@ -30,7 +30,7 @@ if [ "$1" == "stop" ];then
 fi
 check_wiki
 if [ $? -gt 0 ];then
-  start_wiki 2>&1 >>/home/thierry/go.log && sleep 1 && show_wiki >>/home/thierry/go.log 2>&1
+  start_wiki 2>&1 >>$HOME/go.log && sleep 1 && show_wiki >>$HOME/go.log 2>&1
   exit 0
 else
   show_wiki
