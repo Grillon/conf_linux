@@ -2,6 +2,7 @@
 source libsh/libError.sh
 debug 0
 base=$(pwd)
+#TODO: ajouter emacs/doom
 
 function refresh_guix_session_profile {
 	guix package --search-paths -p "$HOME/.guix-profile"
@@ -61,10 +62,10 @@ function required_stuff_nvim {
 	erreur $? "presence guix" $ESTOP iguix
 	case $action in
 		install)
-			guix install gcc python python ruby xclip
+			guix install gcc-toolchain python python-wrapper ruby xclip
 			;;
 		uninstall)
-			guix remove gcc python python ruby xclip
+			guix remove gcc-toolchain python python-wrapper ruby xclip
 			;;
 	esac
 }
@@ -116,7 +117,6 @@ function bash_profile {
 }
 
 function iguix {
-	#TODO: installation de guix si foreign distro
 	curl https://git.savannah.gnu.org/cgit/guix.git/plain/etc/guix-install.sh -O guix-install.sh
 	echo "complete installation with: https://guix.gnu.org/manual/en/html_node/Binary-Installation.html#Binary-Installation"
 }
