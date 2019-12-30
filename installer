@@ -1,51 +1,72 @@
 #!/usr/bin/env bash
+source libsh/libError.sh
+debug 0
 base=$(pwd)
-function install_brew {
-	echo "brew install"
-	ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Linuxbrew/install/master/install)"
-}
-function config_path {
-	grep -qs linuxbrew $HOME/.bashrc
-	if [ $? -eq 0 ];then return
-	fi
-	echo '#add theses lines to your .bashrc :
-	export PATH="$HOME/.linuxbrew/bin:$PATH"
-	export MANPATH="$HOME/.linuxbrew/share/man:$MANPATH"
-	export INFOPATH="$HOME/.linuxbrew/share/info:$INFOPATH"
-	'
-}
-function install_dependencies_redhat {
-	sudo yum -y groupinstall 'Development Tools' && sudo yum -y install curl git irb python-setuptools ruby 
+
+function refresh_guix_session_profile {
+	guix package --search-paths -p "$HOME/.guix-profile"
 }
 
-function install_dependencies_debian {
-sudo apt-get install build-essential curl git python-setuptools ruby
+function vimplug {
+	case $1 in
+		install)
+			curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
+				https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+			;;
+		uninstall)
+			rm -rf ~/.local/share/nvim
+			;;
+	esac
 }
 
-function install_vimplug {
-	curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
-		https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-}
-function install_nvim_tmux {
-	brew install neovim/neovim/neovim
-	pip2 install neovim
-	pip3 install neovim
-	gem install neovim
-	brew install tmux
-}
-
-function install_tpm {
-	git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+function nvim_tmux {
+	case $1 in
+		install)
+			guix install neovim tmux
+			#pip2 install neovim
+			#pip3 install neovim
+			#gem install neovim
+			;;
+		uninstall)
+			guix remove neovim tmux
+			;;
+	esac
 }
 
-function install_nvim_health_stuff {
-	brew install gcc
-	brew install python
-	brew install python3
-	brew install ruby
-	brew install xclip
-	brew install xclip
-	brew install xclip
+function tpm {
+	case $1 in
+		install)
+			git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+			;;
+		uninstall)
+			rm -rf ~/.tmux
+			;;
+	esac
+}
+
+function i3wm {
+	case $1 in
+		install)
+			guix install i3-wm quickswitch-i3 i3-gaps i3blocks i3status i3lock python-py3status
+			;;
+		uninstall)
+			guix remove i3-wm quickswitch-i3 i3-gaps i3blocks i3status i3lock python-py3status
+			;;
+	esac
+}
+
+function required_stuff_nvim {
+	local action=$1
+	type guix
+	erreur $? "presence guix" $ESTOP iguix
+	case $action in
+		install)
+			guix install gcc python python ruby xclip
+			;;
+		uninstall)
+			guix remove gcc python python ruby xclip
+			;;
+	esac
 }
 
 function config_terminal {
@@ -55,45 +76,72 @@ function config_terminal {
 }
 
 function config_ln {
-	cd $HOME/.config
-	if [ ! -d nvim_old ];then
-		mv nvim nvim_old
-	fi
-	ln -s $base/.config/nvim
-	cd $HOME 
-	if [[ ! -f .tmux.conf_old ]]
-	then
-		mv .tmux.conf .tmux.conf_old
-		ln -s $base/.tmux.conf
-	fi
-	cd $base
+	case $1 in
+		install)
+			cd $HOME/.config
+			if [ ! -d nvim_old ];then
+				mv nvim nvim_old
+			else
+				erreur $KO "existance ancien backup" $ESTOP
+			fi
+			ln -s $base/.config/nvim
+			cd $HOME 
+			if [[ ! -f .tmux.conf_old ]]
+			then
+				mv .tmux.conf .tmux.conf_old
+				ln -s $base/.tmux.conf
+			else
+				erreur $KO "existance ancien backup" $ESTOP
+			fi
+			cd $base
+			;;
+		uninstall)
+			echo '#pensez a faire :
+			rm ~/.config/nvim
+			rm ~/.tmux.conf
+			'
+			;;
+	esac
 }
 
-function detect_os {
-if [ -f /etc/debian_version ];then
-	myos=debian
-elif [ -f /etc/redhat-release ];then
-	myos=redhat
-else
-	myos=unknown
-fi
+function bash_profile {
+	case $1 in
+		install)
+			(cd ~ && ln -s ~/Outils/conf_linux/.bash_profile)
+			;;
+		uninstall)
+			rm ~/.bash_profile
+			;;
+	esac
 }
 
-function auto {
-	install_dependencies_$myos
-	install_brew
-	config_path
-	config_path >> $HOME/.bashrc
-	source $HOME/.bashrc
-	install_nvim_health_stuff
-	config_terminal
-	install_nvim_tmux
-	install_vimplug
-	install_tpm
+function iguix {
+	#TODO: installation de guix si foreign distro
+	curl https://git.savannah.gnu.org/cgit/guix.git/plain/etc/guix-install.sh -O guix-install.sh
+	echo "complete installation with: https://guix.gnu.org/manual/en/html_node/Binary-Installation.html#Binary-Installation"
 }
-detect_os
-if [ "$1" == 'all' ];then
-	auto
+
+function urxvt {
+	case $1 in
+		install)
+			curl https://raw.githubusercontent.com/muennich/urxvt-perls/master/keyboard-select -O keyboard-select
+			(cd ~/.urxvt/ext && ln -s ~/Outils/conf_linux/keyboard-select)
+			;;
+		uninstall)
+			rm ~/.urxvt/ext/keyboard-select
+			;;
+	esac
+}
+
+function proceed {
+	local action=$1
+	for stuff in required_stuff_nvim i3wm nvim_tmux urxvt bash_profile config_ln vimplug config_terminal tpm
+	do
+		$stuff $action 
+		refresh_guix_session_profile
+	done
+}
+if [ $# -ne 1 ];then
+	erreur $KO "install/uninstall" $ESTOP "echo $0 install\|uninstall"
 fi
-config_ln
-cd $base
+proceed $1

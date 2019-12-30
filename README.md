@@ -1,34 +1,34 @@
 # conf_linux
 
-Linux home dots files + linux brew autoinstaller
+Ce projet a pour but d'unifier mes configurations linux.  
+Pour cela j'ai choisie Guix, un gestionnaire de package deterministe.  
+J'ai un autre projet avec des objectifs comparables en standby actuellement : git@github.com:Grillon/systeme-portable.git
 
 ## Supported distro
 
-* Debian
-* Redhat
+En théorie toute les distributions supportant guix
 
 ## What do you need :
 
-* gawk
-* i3wm - optional
-* py3status - optional
+* guix
 
 ## What you will get :
 
+* guix-installer
+* i3wm
+* urxvt
 * pip
 * tmux
 * tpm : https://github.com/tmux-plugins/tpm
 * neovim
 * VimPlug
 
-## usage :
+## ressources
 
-./installer all
+https://unix.stackexchange.com/questions/196488/set-urxvt-to-work-with-256-colors
 
-if you tape ./installer whithout argument it symlink nvim plugins & .tmux.conf without any installation
+https://wiki.archlinux.org/index.php/X_resources
 
-Everythings works for both redhat family & debian family on my computer.
-I would like to use guix or nix instead but I have failed to pass CheckHealth.
 
 ## Not finished yet
 

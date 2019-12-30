@@ -26,8 +26,8 @@
 *color7:  #efefef
 *color15: #efefef
 URxvt.scrollBar: false
-URxvt*font:               xft:Inconsolata:style=normal:pixelsize=18:antialias=true:hinting=slight
-URxvt*boldFont:           xft:Inconsolata:style=bold:pixelsize=18:antialias=true:hinting=slight
+URxvt*font:               xft:Inconsolata:style=normal:pixelsize=14:antialias=true:hinting=slight
+URxvt*boldFont:           xft:Inconsolata:style=bold:pixelsize=14:antialias=true:hinting=slight
 URxvt*loginShell: true
 !conseil a l install
 URxvt.perl-ext-common:      default,clipboard,url-select,keyboard-select

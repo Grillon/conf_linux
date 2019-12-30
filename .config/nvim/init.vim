@@ -2,6 +2,7 @@
 """"    vim-plug     """"
 """""""""""""""""""""""""
 call plug#begin('~/.local/share/nvim/plugged')
+let mapleader="!"
  
 " Others
 
@@ -9,6 +10,7 @@ Plug 'vim-airline/vim-airline'
 Plug 'nhooyr/neoman.vim'
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 Plug 'majutsushi/tagbar'
+Plug 'ctrlpvim/ctrlp.vim'
 Plug 'Shougo/unite.vim'
 Plug 'Shougo/vimfiler.vim'
 Plug 'Shougo/vimshell.vim'
@@ -21,8 +23,22 @@ Plug 'vim-perl/vim-perl', { 'for': 'perl', 'do': 'make clean carp dancer highlig
 Plug 'pearofducks/ansible-vim'
 Plug 'freitass/todo.txt-vim'
 Plug 'chrisbra/csv.vim'
+Plug 'marijnh/tern_for_vim'
+Plug 'arakashic/nvim-colors-solarized'
+Plug 'mattn/emmet-vim'
+Plug 'Shutnik/jshint2.vim'
+Plug 'derekwyatt/vim-scala'
+Plug 'vim-scripts/groovy.vim'
+Plug 'vim-scripts/groovyindent-unix'
+Plug 'martinda/Jenkinsfile-vim-syntax'
+Plug 'tpope/vim-repeat'
+"Plug 'c0r73x/neotags.nvim', { 'do' : 'make' }
+Plug 'tyru/open-browser.vim'
+Plug 'previm/previm'
 
 
+" IOT dev
+Plug 'vim-scripts/Arduino-syntax-file'
 
  
 " Java development
@@ -31,6 +47,25 @@ Plug 'sbdchd/neoformat'
 Plug 'artur-shaik/vim-javacomplete2'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'neomake/neomake'
+Plug 'udalov/kotlin-vim'
+Plug 'jiangmiao/auto-pairs'
+
+" TypeScript
+
+Plug 'Quramy/tsuquyomi'
+Plug 'leafgarland/typescript-vim'
+Plug 'Quramy/vim-js-pretty-template'
+Plug 'jason0x43/vim-js-indent'
+Plug 'Quramy/vim-dtsm'
+Plug 'mhartington/vim-typings'
+
+" Language Client
+Plug 'autozimu/LanguageClient-neovim', { 'do': ':UpdateRemotePlugins' }
+
+" (Optional) Multi-entry selection UI.
+Plug 'junegunn/fzf'
+
+
  
 " Initialize plugin system
 call plug#end()
@@ -43,6 +78,19 @@ colorscheme delek
 set shiftwidth=2
 set tabstop=2 
 set softtabstop=2
+nmap =j :%!python -m json.tool<CR>
+nnoremap <C-Down> "add"ap
+nnoremap <C-Up> <Up>"add"ap<Up>
+
+"""""""""""""""""""""""""
+"" solarized "
+"""""""""""""""""""""""""
+let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+set background=dark " or light
+" colorscheme solarized
+hi diffAdd          ctermfg=Black ctermbg=Green guifg=White guibg=Green
+hi diffChange           ctermfg=Black ctermbg=Yellow guifg=Blue guibg=Yellow
+
  
 """""""""""""""""""""""""
 """"    deoplete     """"
@@ -59,6 +107,13 @@ let g:deoplete#file#enable_buffer_path = 1
 """"  Java Complete  """"
 """""""""""""""""""""""""
 autocmd FileType java setlocal omnifunc=javacomplete#Complete
+
+
+"""""""""""""""""""""""""
+"" TypeScript Complete ""
+"""""""""""""""""""""""""
+
+autocmd BufNewFile,BufRead *.ts setlocal filetype=typescript
  
 """""""""""""""""""""""""
 """"     neomake     """"
@@ -160,3 +215,32 @@ call vimfiler#custom#profile('default', 'context', {
 """""""""""""""""""""""""
 "  javacomplete binding "
 """""""""""""""""""""""""
+
+"""""""""""""""""
+" Tern settings
+"""""""""""""""""
+let g:tern_show_argument_hints='on_hold'
+" and 
+let g:tern_map_keys=1
+
+""""""""""""""""""""""""
+"  options perso       "
+""""""""""""""""""""""""
+map <Leader><Space> :noh<CR>
+
+let g:neotags#typescript#order = 'cnfmoited'
+
+let g:neotags#typescript#c = { 'group': 'javascriptClassTag' }
+let g:neotags#typescript#C = { 'group': 'javascriptConstantTag' }
+let g:neotags#typescript#f = { 'group': 'javascriptFunctionTag' }
+let g:neotags#typescript#o = { 'group': 'javascriptObjectTag' }
+
+let g:neotags#typescript#n = g:neotags#typescript#C
+let g:neotags#typescript#f = g:neotags#typescript#f
+let g:neotags#typescript#m = g:neotags#typescript#f
+let g:neotags#typescript#o = g:neotags#typescript#o
+let g:neotags#typescript#i = g:neotags#typescript#C
+let g:neotags#typescript#t = g:neotags#typescript#C
+let g:neotags#typescript#e = g:neotags#typescript#C
+
+let g:neotags#typescript#d = g:neotags#typescript#c
