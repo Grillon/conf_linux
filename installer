@@ -3,6 +3,7 @@ source libsh/libError.sh
 debug 0
 base=$(pwd)
 #TODO: ajouter emacs/doom
+#TODO: fixer les versions
 
 function refresh_guix_session_profile {
 	guix package --search-paths -p "$HOME/.guix-profile"
