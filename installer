@@ -118,6 +118,7 @@ function bash_profile {
 }
 
 function iguix {
+	# telechargement de l'installateur guix + lien vers la doc
 	curl https://git.savannah.gnu.org/cgit/guix.git/plain/etc/guix-install.sh -O guix-install.sh
 	echo "complete installation with: https://guix.gnu.org/manual/en/html_node/Binary-Installation.html#Binary-Installation"
 }
@@ -125,10 +126,12 @@ function iguix {
 function urxvt {
 	case $1 in
 		install)
+			guix install rxvt-unicode
 			curl https://raw.githubusercontent.com/muennich/urxvt-perls/master/keyboard-select -O keyboard-select
 			(cd ~/.urxvt/ext && ln -s ~/Outils/conf_linux/keyboard-select)
 			;;
 		uninstall)
+			guix remove rxvt-unicode
 			rm ~/.urxvt/ext/keyboard-select
 			;;
 	esac
