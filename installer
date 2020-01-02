@@ -49,10 +49,10 @@ function tpm {
 function i3wm {
 	case $1 in
 		install)
-			guix install i3-wm quickswitch-i3 i3-gaps i3blocks i3status i3lock python-py3status
+			guix install i3-wm quickswitch-i3 i3-gaps i3blocks i3status i3lock python-py3status font-cantarell and font-dejavu
 			;;
 		uninstall)
-			guix remove i3-wm quickswitch-i3 i3-gaps i3blocks i3status i3lock python-py3status
+			guix remove i3-wm quickswitch-i3 i3-gaps i3blocks i3status i3lock python-py3status font-cantarell and font-dejavu
 			;;
 	esac
 }
@@ -126,13 +126,20 @@ function iguix {
 function urxvt {
 	case $1 in
 		install)
-			guix install rxvt-unicode
+			guix install rxvt-unicode xrdb
 			curl https://raw.githubusercontent.com/muennich/urxvt-perls/master/keyboard-select -O keyboard-select
-			(cd ~/.urxvt/ext && ln -s ~/Outils/conf_linux/keyboard-select)
+			curl https://raw.githubusercontent.com/majutsushi/urxvt-font-size/master/font-size -O font-size
+			(cd ~/.urxvt/ext && ln -s ~/Outils/conf_linux/keyboard-select && ln -s ~/Outils/conf_linux/font-size)
+			cd
+			ln -s ~/Outils/conf_linux/.Xresources
+			ln -s ~/Outils/conf_linux/.Xdefaults
 			;;
 		uninstall)
-			guix remove rxvt-unicode
+			guix remove rxvt-unicode xrdb
 			rm ~/.urxvt/ext/keyboard-select
+			rm ~/.urxvt/ext/font-size
+			rm ~/.Xdefaults
+			rm ~/.Xresources
 			;;
 	esac
 }
