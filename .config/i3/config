@@ -171,6 +171,12 @@ bindsym XF86AudioPause exec playerctl pause
 bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
 
+# lancer open-vpn-gui
+bindsym $mod+Shift+V exec orange-vpn-gui
+
+# lancer Emacs
+bindsym $mod+Shift+Return exec emacs
+
 
 #floating window
 for_window [class="copyq"] floating enable
@@ -196,6 +202,9 @@ bindsym $mod+shift+z exec i3lock -t -i ~/.config/i3/lisp_lambda.png
 # a lancer au boot
 exec --no-startup-id /home/otvy8405/.config/i3/locker.sh
 exec copyq
+exec --no-startup-id "i3-msg 'workspace 1; append_layout $HOME/workspace-1.json'"
+exec --no-startup-id "i3-msg 'workspace 2; append_layout $HOME/workspace-2.json'"
+exec --no-startup-id "i3-msg 'workspace 4; append_layout $HOME/workspace-4.json'"
 
 
 # Start i3bar to display a workspace bar (plus the system information i3status
