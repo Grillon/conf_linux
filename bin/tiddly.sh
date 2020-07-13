@@ -3,6 +3,8 @@ export PATH=$PATH:$HOME/Outils/node-v12.13.1-linux-x64/bin
 export log_file=$HOME/go.log
 export firefox_path=/usr/bin/firefox
 export wiki_url=http://localhost:8080
+#export tiddlywiki_tiddlers=$HOME/Documents/blocNote/
+export tiddlywiki_tiddlers=$HOME/Vaults/tiddlers/
 function log_wiki {
   message=$1
   date "+%y%m%d %H:%M:%S $message" >> $log_file
@@ -13,7 +15,7 @@ function check_wiki {
 }
 function start_wiki {
   log_wiki ${FUNCNAME[0]}
-  (cd $HOME/Documents/blocNote/ && tiddlywiki monWiki --server&)
+  (cd $tiddlywiki_tiddlers && tiddlywiki monWiki --server&)
 }
 function show_wiki {
   log_wiki ${FUNCNAME[0]}
